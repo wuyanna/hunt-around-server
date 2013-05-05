@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chocobean.ha.account.service.dao.AccountDao">
+	<resultMap id="userResult" type="com.chocobean.ha.account.entity.UserPo">
+		<result property="id" column="id" />
+		<result property="pwd" column="PASSWORD" />
+		<result property="firstName" column="FIRST_NAME" />
+		<result property="lastName" column="LAST_NAME" />
+		<result property="gender" column="GENDER" />
+	</resultMap>
+
+	<select id="getUserById" resultMap="userResult">
+		SELECT * FROM LC_User WHERE
+		id=#{uid}
+	</select>
+	
+</mapper>
